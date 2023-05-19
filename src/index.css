@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('./utils/bootstrap-grid.min.css');
+@import url('./utils/bootstrap-grid.min.css');
+@font-face {
+  font-family: 'product sans';
+  src: url('./fonts/ProductSansRegular.ttf');
+}
+@font-face {
+  font-family: "Inter";
+  src: url('./fonts/Inter-Regular.ttf');
+}
+@font-face {
+  font-family: "Inter Medium";
+  src: url('./fonts/Inter-Medium.ttf');
+}
+@font-face {
+  font-family: "Inter Light";
+  src: url('./fonts/Inter-Light.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.home-container {
+  background-color: #171118;
+  height: 100vh
+}
+.home-container-inner {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem
+}
+.img-container {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  height: 100%;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  height: 100%;
+  transition-duration: 0.4s;
+}
+
+h1 {
+  font-weight: 700;
+  color: #171118;
+  font-family: 'product sans' !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 0px !important;
+  text-align: center;
+}
+h1 a {
+  color: #4D88C7;
+}
+.text-muted {
+  color: #140e15;
+}
+.img-overlay-box {
+margin-left: -5rem
+}
+.img-overlay-box-inner {
+  background-color: white;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(3px);
+  transition: transform 0.3s cubic-bezier(0.78, 0.08, 0, 0.98);
+}
+.img-overlay-box-inner:hover {
+  transition: transform 0.3s cubic-bezier(0.78, 0.08, 0, 0.98);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+.img-overlay-box-inner:active {
+  transition: transform 0.2s cubic-bezier(0.19, 0.85, 0, 0.98);
+  transform: translateY(1px);
+  cursor: pointer;
+}
+.img-overlay-box .text-muted {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #171118;
+  opacity: 0.6;
+}
+.home-container-inner {
+  height: 100%
+}
+.home-text-large {
+  margin-top: 0px;
+  font-family: 'Inter Light';
+  font-style: normal;
+  text-align: start;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 36px;
+  text-indent: 16px;
+  color: #FFFFFF;
+  opacity: 0.8;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.home-text-supporting {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-indent: 16px;
+  color: #FFFFFF;
+  opacity: 0.8;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  margin-top: 3px !important
+}
+.navlink-item {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #4D88C7;
+  transition: transform 0.3s ease;
+  text-align: start;
+  height: auto
+}
+.fixed {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.fixed::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4D88C7;
+  transition: width 0.3s ease;
+  cursor: pointer;
+}
+
+.fixed:hover::before {
+  width: 100%;
+  cursor: pointer;
 }
