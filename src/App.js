@@ -1,7 +1,7 @@
 import img1 from './imgs/mock.png'
 import img2 from './imgs/mock2.png'
 import react, {useState, useEffect} from 'react';
-
+import chevron from './imgs/icons/down-chevron.png'
 
 function App() {
 
@@ -25,19 +25,23 @@ useEffect(() => {
   return (
 <div>
   <div className='home-container '>
-    <div className='container-fluid px-5 home-container-inner'> 
+    <div className='container-fluid px-1 px-lg-5 home-container-inner'> 
       <div className='row home-container-inner '>
-        <div className='col-12 col-lg-6'>
+        <div className='col-12 col-lg-6 splash-left'>
           <div className='img-container' style={{backgroundImage: `url(${img})`}}>
-          <div className='img-overlay-box'>
-          <div className="content-wrapper p-3 img-overlay-box-inner">
-          <h1 className='my-0'>Hello, I'm Nikola, and <br></br><a>I design experience!</a></h1>
-          <p className='text-muted'>Based in: Zagreb, Croatia</p>
+            <div className='img-overlay-box'>
+              <div className="content-wrapper p-3 img-overlay-box-inner">
+                <h1 className='my-0'>Hello, I'm Nikola, and <br></br><a>I design experience!</a></h1>
+                <p className='text-muted'>Based in: Zagreb, Croatia</p>
+              </div>
+            </div>
+            <div className='down-arrow-box'>
+              <img className='down-arrow-img' src={chevron}></img>
+            </div>
           </div>
-          </div>
-          </div>
+
         </div>
-        <div className='col-12 col-lg-6 text-container-outer d-flex flex-column align-items-center'>
+        <div className='col-12 col-lg-6 text-container-outer d-flex flex-column align-items-center splash-right'>
 
             <div className='text-container-inner px-3'>
               <p className='home-text-large'>I'm a passionate UX/UI professional with 12 years of experience in tech and over 6 years in UX research, with a background in graphic design (branding / creating marketing assets / DTP / social media / packaging) for different B2B or B2C products.
@@ -57,7 +61,7 @@ useEffect(() => {
               By improving people’s life I mean the<b> value of their time</b>. <b>Currently looking for new opportunities</b>. If you have questions please feel free to contact me at any time.
               </p>
               </div>
-              <div className='nav-container mt-auto me-auto px-3'>
+              <div className='nav-container mt-auto me-auto px-3 '>
 
               <a className='navlink-item  '><p className='fixed'>WORKING EXPERIENCE</p></a><br></br>
               <a className='navlink-item'><p className='fixed'>CASE STUDIES</p></a><br></br>
