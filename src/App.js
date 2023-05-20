@@ -1,5 +1,5 @@
 import img1 from './imgs/mock.png'
-import img2 from './imgs/mock2.png'
+import img2 from './imgs/mock.png'
 import react, {useState, useEffect} from 'react';
 import chevron from './imgs/icons/down-chevron.png'
 
