@@ -2,11 +2,11 @@ import img1 from './imgs/mock.png'
 import img2 from './imgs/mock.png'
 import react, {useState, useEffect} from 'react';
 import chevron from './imgs/icons/down-chevron.png'
-
+import CaseStudies from './CaseStudies';
 function App() {
 
 const [img, setImg] = useState(img2);
-
+const [ visibility, setVisiblity ] = useState(false)
 const handleImg = () => {
   if (img === img1) {
     setImg(img2);
@@ -14,14 +14,26 @@ const handleImg = () => {
     setImg(img1);
   }
 };
-
 const handleTimeout = (fn) => {
   setTimeout(fn, 3000);
 };
 
 useEffect(() => {
-  handleTimeout(handleImg); // Pass handleImg without parentheses
+  handleTimeout(handleImg);
 }, [img]);
+
+//handle the case studies "modal"
+const handleVisibility = () => {
+  if (visibility == false) {
+    console.log('false to true')
+    return setVisiblity(true)
+  }
+  else if ( visibility == true) {
+    console.log('true to false')
+    return setVisiblity(false)
+  }
+}
+
   return (
 <div>
   <div className='home-container '>
@@ -29,7 +41,7 @@ useEffect(() => {
       <div className='row home-container-inner '>
         <div className='col-12 col-lg-6 splash-left'>
           <div className='img-container' style={{backgroundImage: `url(${img})`}}>
-            <div className='img-overlay-box'>
+            <div className='img-overlay-box' onClick={handleVisibility}>
               <div className="content-wrapper p-3 img-overlay-box-inner">
                 <h1 className='my-0'>Hello, I'm Nikola, and <br></br><a>I design experience!</a></h1>
                 <p className='text-muted'>Based in: Zagreb, Croatia</p>
@@ -72,6 +84,7 @@ useEffect(() => {
       </div>
     </div>
   </div>
+  <CaseStudies visibility={visibility == false ? "hidden" : "visible"} />
 </div>
   );
 }

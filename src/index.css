@@ -292,3 +292,11 @@ margin-left: -5rem
     font-size: 32px;
   }
 }
+.case-studies-container {
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+}
